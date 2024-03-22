@@ -2,14 +2,14 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const usersModel = require('../models/usersModel')
-
 const attendanceModel = require('../models/attendanceModel')
+const leaveApplicationModel = require('../models/leaveApplicationModel')
 
 const attendance = async (req, res) => {
     try {
-        const {fullName, userId} = req.body
-        const user = await usersModel.findOne({fullName})
-        !user && res.status(404).json({error: 'Nama tidak terdaftar'})
+        const { fullName, userId } = req.body
+        const user = await usersModel.findOne({ fullName })
+        !user && res.status(404).json({ error: 'Nama tidak terdaftar' })
 
         const currentTime = new Date()
         const expectedTime = new Date(currentTime)
@@ -19,7 +19,7 @@ const attendance = async (req, res) => {
         isLate = currentTime > expectedTime
 
         const attendanceTime = isLate ? 'Telat' : 'Tepat Waktu'
-        
+
         const newAttendance = new attendanceModel({
             fullName,
             userId,
@@ -32,7 +32,7 @@ const attendance = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
         console.log(error)
     }
-    
+
 }
 
 const updateAttendance = async (req, res) => {
@@ -49,8 +49,8 @@ const updateAttendance = async (req, res) => {
             return res.status(400).json({ error: 'Tidak diizinkan' })
         }
 
-        if(attendance.remarks === 'Absen Pulang'){
-            return res.status(400).json({error: 'Sudah absen pulang'})
+        if (attendance.remarks === 'Absen Pulang') {
+            return res.status(400).json({ error: 'Sudah absen pulang' })
         }
 
         attendance.remarks = 'Absen Pulang'
@@ -64,19 +64,29 @@ const updateAttendance = async (req, res) => {
     }
 }
 
-const getAttendance = async (req, res) => {
+const createApplication = async (req, res) => {
     try {
-        const allAttendances = await attendanceModel.find()
-        res.status(200).json(allAttendances)
+        const { userId, start_date, end_date, purpose } = req.body
+
+        const newLeaveApplication = new leaveApplicationModel({
+            userId,
+            start_date,
+            end_date,
+            purpose
+        });
+
+        await newLeaveApplication.save();
+
+        res.status(201).json({ message: 'Berhasil mengajukan cuti', data: newLeaveApplication })
     } catch (error) {
-        console.log(error)
-        res.status(500).json({ error: 'Internal Server Error' });
+        console.error(error);
+        res.status(500).json({ message: 'Internal server error' })
     }
 }
 
 module.exports = {
     attendance,
     updateAttendance,
-    getAttendance
+    createApplication
 }
 

@@ -8,6 +8,7 @@ dotenv.config()
 const app = express()
 const authRoutes = require('./src/routes/authRoutes')
 const userRoutes = require('./src/routes/userRoutes')
+const hrRoutes = require('./src/routes/hrRoutes')
 
 db()
 app.use(cors())
@@ -15,6 +16,7 @@ app.use(express.json())
 
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
+app.use('/api/hr', hrRoutes)
 
 const port = 3001
 
