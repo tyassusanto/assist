@@ -6,13 +6,15 @@ const mongoose = require('mongoose')
 dotenv.config()
 
 const app = express()
-const authRoutes = require('./src/routes/authRoute')
+const authRoutes = require('./src/routes/authRoutes')
+const userRoutes = require('./src/routes/userRoutes')
 
 db()
 app.use(cors())
 app.use(express.json())
 
 app.use('/api/auth', authRoutes)
+app.use('/api/user', userRoutes)
 
 const port = 3001
 
