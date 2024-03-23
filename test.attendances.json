@@ -1,0 +1,178 @@
+[{
+  "_id": {
+    "$oid": "65fdc99856bcbcea5fad36a6"
+  },
+  "userId": {
+    "$oid": "65fda32a1d9d15891eeb526b"
+  },
+  "fullName": "Administrator",
+  "remarks": "Absen Pulang",
+  "createdAt": {
+    "$date": "2024-03-22T18:10:32.959Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-22T18:11:44.285Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fdca84f80e7bc46df335dd"
+  },
+  "userId": {
+    "$oid": "65fda32a1d9d15891eeb526b"
+  },
+  "fullName": "Administrator",
+  "remarks": "Absen Pulang",
+  "createdAt": {
+    "$date": "2024-03-22T18:14:28.384Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-22T18:14:40.758Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fddd5b9c32c843dc6c235f"
+  },
+  "userId": {
+    "$oid": "65fda32a1d9d15891eeb526b"
+  },
+  "fullName": "Administrator",
+  "remarks": "Absen Masuk",
+  "attendanceTime": "Telat",
+  "createdAt": {
+    "$date": "2024-03-22T19:34:51.589Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-22T19:34:51.589Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fddd729928f0f915e25e85"
+  },
+  "userId": {
+    "$oid": "65fda32a1d9d15891eeb526b"
+  },
+  "fullName": "Administrator",
+  "remarks": "Absen Masuk",
+  "attendanceTime": "Tepat Waktu",
+  "createdAt": {
+    "$date": "2024-03-22T19:35:14.442Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-22T19:35:14.442Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fddd91ec8e2c1818b51db2"
+  },
+  "userId": {
+    "$oid": "65fda32a1d9d15891eeb526b"
+  },
+  "fullName": "Administrator",
+  "remarks": "Absen Masuk",
+  "attendanceTime": "Tepat Waktu",
+  "createdAt": {
+    "$date": "2024-03-22T19:35:45.379Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-22T19:35:45.379Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fdde41ec8e2c1818b51db5"
+  },
+  "userId": {
+    "$oid": "65fda32a1d9d15891eeb526b"
+  },
+  "fullName": "Administrator",
+  "remarks": "Absen Pulang",
+  "attendanceTime": "Telat",
+  "createdAt": {
+    "$date": "2024-03-22T19:38:41.244Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-22T19:38:52.329Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fed2330c87f5e0e8d168a2"
+  },
+  "userId": {
+    "$oid": "65fda32a1d9d15891eeb526b"
+  },
+  "fullName": "Administrator",
+  "remarks": "Absen Masuk",
+  "attendanceTime": "Telat",
+  "createdAt": {
+    "$date": "2024-03-23T12:59:31.228Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-23T12:59:31.228Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fed244a5db085811bc4cd2"
+  },
+  "userId": {
+    "$oid": "65fda32a1d9d15891eeb526b"
+  },
+  "fullName": "Administrator",
+  "remarks": "Absen Masuk",
+  "attendanceTime": "Telat",
+  "createdAt": {
+    "$date": "2024-03-23T12:59:48.229Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-23T12:59:48.229Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fed2caf8968dee1780493b"
+  },
+  "userId": {
+    "$oid": "65fda32a1d9d15891eeb526b"
+  },
+  "fullName": "Administrator",
+  "remarks": "Absen Masuk",
+  "attendanceTime": "Telat",
+  "createdAt": {
+    "$date": "2024-03-23T13:02:02.593Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-23T13:02:02.593Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65fed326f8968dee1780493e"
+  },
+  "userId": {
+    "$oid": "65fdfca1c2da5bb58f01cc26"
+  },
+  "fullName": "User Staff",
+  "remarks": "Absen Masuk",
+  "attendanceTime": "Telat",
+  "createdAt": {
+    "$date": "2024-03-23T13:03:34.138Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-23T13:03:34.138Z"
+  },
+  "__v": 0
+}]
