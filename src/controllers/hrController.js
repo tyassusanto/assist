@@ -17,13 +17,45 @@ const getAllApplication = async (req, res) => {
 
 const getAttendance = async (req, res) => {
     try {
-        const allAttendances = await attendanceModel.find()
-        res.status(200).json(allAttendances)
+        const { startDate, endDate } = req.body;
+
+        const attendanceData = await attendanceModel.aggregate([
+            {
+                $match: {
+                    createdAt: {
+                        $gte: new Date(startDate),
+                        $lte: new Date(endDate)
+                    }
+                }
+            },
+            {
+                $group: {
+                    _id: "$userId",
+                    fullName: { $first: "$fullName" },
+                    totalLate: {
+                        $sum: {
+                            $cond: [{ $eq: ["$attendanceTime", "Telat"] }, 1, 0]
+                        }
+                    }
+                }
+            },
+            {
+                $project: {
+                    _id: 0,
+                    userId: "$_id",
+                    fullName: 1,
+                    totalLate: 1
+                }
+            }
+        ]);
+
+        res.status(200).json(attendanceData)
     } catch (error) {
-        console.log(error)
-        res.status(500).json({ error: 'Internal Server Error' });
+        console.log(error);
+        res.status(500).json({ error: 'Internal Server Error' })
     }
 }
+
 
 const updateApplication = async (req, res) => {
     try {
