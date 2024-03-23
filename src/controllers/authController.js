@@ -6,7 +6,7 @@ dotenv.config()
 
 const addUser = async (req, res) => {
     try {
-        const { fullName, username, password } = req.body
+        const { fullName, username, password, level } = req.body
         if (!username) return res.status(400).json({ error: 'Username tidak boleh kosong' })
         if (!fullName) return res.status(400).json({ error: 'Nama tidak boleh kosong' })
         if (!password) return res.status(400).json({ error: 'Password tidak boleh kosong' })
@@ -21,6 +21,7 @@ const addUser = async (req, res) => {
             fullName,
             username,
             password: hashedPassword,
+            level
         })
 
         const user = await newUser.save()

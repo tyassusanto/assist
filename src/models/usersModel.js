@@ -17,7 +17,6 @@ const UserSchema = mongoose.Schema({
    level: {
       type: String,
       enum: ['Staff', 'HR', 'Administrator'],
-      default: 'Staff',
       require: true
    }
 },
